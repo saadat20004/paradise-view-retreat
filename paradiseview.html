@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paradise View Retreat · Badger Mountain, East Wenatchee WA</title>
+<meta name="description" content="Private 62 acre mountaintop campsite at 3,100 ft on Badger Mountain with 360 degree views of the Columbia River. One site, all yours. Book your stay.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{
+  --dusk:#1c2629;
+  --dusk-2:#26343a;
+  --sage:#7f8c6b;
+  --sage-soft:#e7eadc;
+  --grass:#c8a565;
+  --grass-soft:#f3e9d3;
+  --ember:#d4612a;
+  --ember-dark:#b44d1c;
+  --river:#4b7a89;
+  --cream:#f8f4ec;
+  --paper:#ffffff;
+  --ink:#1d2422;
+  --muted:#5d6964;
+  --line:#e2ddd0;
+  --ok:#3f7d4e;
+  --warn:#b7791f;
+  --bad:#b3362b;
+  --radius:18px;
+  --shadow:0 18px 50px -20px rgba(28,38,41,.35);
+  --ease:cubic-bezier(.22,.8,.3,1);
+  --head:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Figtree",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--body);color:var(--ink);background:var(--cream);line-height:1.6;font-size:17px;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--ember);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1200px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--head);line-height:1.05;letter-spacing:-.02em}
+h2{font-size:clamp(2rem,4.2vw,3.3rem);font-weight:800}
+.eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ember)}
+.lead{color:var(--muted);font-size:1.08rem;max-width:60ch}
+section{padding:110px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.95rem 1.5rem;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .25s var(--ease),background .25s,color .25s,box-shadow .25s,border-color .25s}
+.btn-ember{background:var(--ember);color:#fff;box-shadow:0 10px 24px -10px rgba(212,97,42,.7)}
+.btn-ember:hover{background:var(--ember-dark);transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(255,255,255,.7);color:#fff}
+.btn-ghost:hover{background:#fff;color:var(--dusk);transform:translateY(-2px)}
+.btn-dark{background:var(--dusk);color:#fff}
+.btn-dark:hover{background:var(--dusk-2);transform:translateY(-2px)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ===== Header ===== */
+.header{position:fixed;inset:0 0 auto;z-index:50;transition:background .35s,box-shadow .35s,padding .35s;padding:18px 0}
+.header.solid{background:rgba(248,244,236,.94);backdrop-filter:blur(10px);box-shadow:0 6px 24px -14px rgba(0,0,0,.3);padding:10px 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:#fff;font-family:var(--head);font-weight:800;font-size:1.2rem;transition:color .35s}
+.logo i{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--ember);color:#fff;font-size:1rem}
+.header.solid .logo{color:var(--dusk)}
+.menu{display:flex;align-items:center;gap:6px;list-style:none}
+.menu a{display:block;padding:.55rem .9rem;border-radius:999px;text-decoration:none;font-weight:600;font-size:.95rem;color:#fff;transition:background .25s,color .25s}
+.menu a:hover{background:rgba(255,255,255,.18)}
+.header.solid .menu a{color:var(--ink)}
+.header.solid .menu a:hover{background:var(--sage-soft)}
+.menu .btn{display:inline-flex;gap:.6rem;margin-left:8px;padding:.7rem 1.3rem;color:#fff!important}
+.menu .btn:hover{background:var(--ember-dark)!important}
+.burger{display:none;width:46px;height:46px;border-radius:12px;border:0;background:rgba(255,255,255,.2);color:#fff;font-size:1.2rem;cursor:pointer}
+.header.solid .burger{background:var(--dusk);color:#fff}
+
+/* ===== Hero ===== */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;padding:0 0 150px;overflow:hidden;background:var(--dusk)}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.08);animation:heroZoom 14s var(--ease) forwards}
+@keyframes heroZoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,38,41,.45) 0%,rgba(28,38,41,.05) 35%,rgba(28,38,41,.75) 100%)}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
+.hero .eyebrow{color:var(--grass)}
+.hero h1{font-size:clamp(3rem,8.5vw,7.2rem);font-weight:800;margin:.6rem 0 1rem;max-width:11ch}
+.hero p{font-size:1.15rem;max-width:46ch;color:rgba(255,255,255,.9)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.8rem}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:1.4rem}
+.badge{display:inline-flex;align-items:center;gap:.45rem;font-size:.85rem;font-weight:600;padding:.4rem .8rem;border-radius:999px;background:rgba(255,255,255,.14);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.22)}
+.badge i{color:var(--grass)}
+/* altitude gauge */
+.altitude{display:flex;flex-direction:column;align-items:center;gap:10px;padding-bottom:6px}
+.alt-bar{position:relative;width:6px;height:220px;border-radius:6px;background:rgba(255,255,255,.2);overflow:hidden}
+.alt-bar span{position:absolute;inset:auto 0 0;height:0;background:linear-gradient(var(--grass),var(--ember));border-radius:6px;animation:fill 2.2s .5s var(--ease) forwards}
+@keyframes fill{to{height:100%}}
+.alt-num{font-family:var(--head);font-weight:800;font-size:2rem;line-height:1}
+.alt-label{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;opacity:.8;writing-mode:vertical-rl;transform:rotate(180deg)}
+
+/* quick booking bar */
+.quick{position:relative;z-index:5;margin-top:-90px}
+.quick form{display:grid;grid-template-columns:1.1fr 1.1fr .9fr auto;gap:10px;background:var(--paper);padding:12px;border-radius:24px;box-shadow:var(--shadow)}
+.q-field{display:flex;align-items:center;gap:12px;padding:10px 16px;border-radius:16px;transition:background .25s}
+.q-field:hover,.q-field:focus-within{background:var(--cream)}
+.q-field i{color:var(--ember);font-size:1.1rem}
+.q-field label{display:block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.q-field input,.q-field select{border:0;background:transparent;font-weight:600;width:100%;outline:none;padding:2px 0}
+.quick .btn{border-radius:16px;padding:1rem 1.6rem}
+.quick-note{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;margin-top:16px;font-size:.92rem;color:var(--muted)}
+.quick-note i{color:var(--sage);margin-right:.35rem}
+.quick-note strong{color:var(--ink)}
+
+/* ===== Stats ===== */
+.stats{padding:80px 0 0}
+.stat-grid{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{padding:28px 18px;text-align:center;border-right:1px solid var(--line);transition:background .3s}
+.stat:last-child{border-right:0}
+.stat:hover{background:var(--grass-soft)}
+.stat i{font-size:1.3rem;color:var(--ember);margin-bottom:.6rem}
+.stat b{display:block;font-family:var(--head);font-size:2.2rem;font-weight:800;line-height:1}
+.stat span{font-size:.9rem;color:var(--muted)}
+
+/* ===== Gallery ===== */
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:44px;flex-wrap:wrap}
+.sec-head h2{margin-top:.5rem}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:14px}
+.g-item{position:relative;border-radius:var(--radius);overflow:hidden;cursor:zoom-in;background:var(--dusk-2);border:0;padding:0}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease),filter .5s}
+.g-item:hover img{transform:scale(1.07)}
+.g-item figcaption{position:absolute;left:12px;right:12px;bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:.6rem .9rem;border-radius:12px;background:rgba(28,38,41,.62);backdrop-filter:blur(6px);color:#fff;font-size:.88rem;font-weight:600;transform:translateY(10px);opacity:0;transition:.4s var(--ease)}
+.g-item:hover figcaption,.g-item:focus-visible figcaption{transform:none;opacity:1}
+.g-item.big{grid-column:span 2;grid-row:span 2}
+.g-item.tall{grid-row:span 2}
+.g-item.wide{grid-column:span 2}
+.g-more{position:absolute;inset:0;display:grid;place-items:center;background:rgba(28,38,41,.55);color:#fff;font-family:var(--head);font-weight:800;font-size:1.4rem;transition:background .3s}
+.g-item:hover .g-more{background:rgba(212,97,42,.75)}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(15,20,22,.95);display:none;align-items:center;justify-content:center;padding:70px 80px}
+.lightbox.open{display:flex;animation:fadeIn .3s}
+@keyframes fadeIn{from{opacity:0}}
+.lightbox img{max-width:100%;max-height:100%;border-radius:12px;object-fit:contain;animation:pop .45s var(--ease)}
+@keyframes pop{from{opacity:0;transform:scale(.96)}}
+.lb-btn{position:absolute;width:54px;height:54px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;font-size:1.2rem;cursor:pointer;transition:background .25s,transform .25s}
+.lb-btn:hover{background:var(--ember);transform:scale(1.06)}
+.lb-prev{left:18px;top:50%;margin-top:-27px}.lb-next{right:18px;top:50%;margin-top:-27px}
+.lb-close{top:16px;right:18px}
+.lb-cap{position:absolute;bottom:20px;left:0;right:0;text-align:center;color:#fff;font-weight:600}
+.lb-cap span{opacity:.6;margin-left:.6rem}
+
+/* ===== The Site ===== */
+.site{background:var(--dusk);color:#fff;position:relative;overflow:hidden}
+.site .lead{color:rgba(255,255,255,.75)}
+.site-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:start}
+.site h2{margin:.5rem 0 1.2rem}
+.site .eyebrow{color:var(--grass)}
+.points{list-style:none;display:grid;gap:14px;margin:28px 0}
+.points li{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);transition:background .3s,transform .3s var(--ease)}
+.points li:hover{background:rgba(255,255,255,.09);transform:translateX(6px)}
+.points i{color:var(--grass);font-size:1.1rem;margin-top:4px;width:22px;text-align:center}
+.points b{display:block}
+.points span{color:rgba(255,255,255,.7);font-size:.95rem}
+.nearby{display:flex;flex-wrap:wrap;gap:10px}
+.nearby span{display:inline-flex;gap:.5rem;align-items:center;padding:.5rem .9rem;border-radius:999px;border:1px solid rgba(255,255,255,.2);font-size:.9rem;transition:border-color .3s,background .3s}
+.nearby span:hover{border-color:var(--grass);background:rgba(200,165,101,.12)}
+.nearby i{color:var(--grass)}
+/* rig checker */
+.rig{background:var(--paper);color:var(--ink);border-radius:24px;padding:32px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6);position:sticky;top:100px}
+.rig h3{font-size:1.6rem;margin-bottom:.4rem}
+.rig p{color:var(--muted);font-size:.95rem;margin-bottom:1.2rem}
+.rig-img{border-radius:14px;overflow:hidden;height:170px;margin-bottom:22px}
+.rig-img img{width:100%;height:100%;object-fit:cover}
+.field{display:grid;gap:6px;margin-bottom:14px}
+.field label{font-size:.85rem;font-weight:700}
+.field input,.field select,.field textarea{width:100%;padding:.85rem 1rem;border-radius:12px;border:1.5px solid var(--line);background:var(--cream);transition:border-color .25s,background .25s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--ember);background:#fff}
+.rig-result{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:14px;font-size:.95rem;font-weight:600;background:var(--sage-soft);transition:background .3s,color .3s}
+.rig-result i{margin-top:3px}
+.rig-result.ok{background:#e3f0e4;color:var(--ok)}
+.rig-result.warn{background:#fbefd9;color:var(--warn)}
+.rig-result.bad{background:#f8e1de;color:var(--bad)}
+.rig-specs{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.rig-specs span{font-size:.8rem;font-weight:600;padding:.35rem .7rem;border-radius:999px;background:var(--cream);color:var(--muted)}
+
+/* ===== Expect ===== */
+.expect-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.card{background:var(--paper);border-radius:24px;padding:34px;border:1px solid var(--line)}
+.card h3{font-size:1.5rem;display:flex;align-items:center;gap:.7rem;margin-bottom:1.4rem}
+.card h3 .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:1rem}
+.ic.green{background:#e3f0e4;color:var(--ok)}
+.ic.amber{background:var(--grass-soft);color:var(--ember)}
+.amen{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.amen div{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:var(--cream);font-weight:600;font-size:.95rem;transition:transform .3s var(--ease),background .3s}
+.amen div:hover{transform:translateY(-3px);background:var(--sage-soft)}
+.amen i{width:20px;text-align:center;color:var(--sage)}
+.card.bring .amen i{color:var(--ember)}
+.info-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
+.info{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px;transition:transform .3s var(--ease),box-shadow .3s}
+.info:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.info i{color:var(--ember);font-size:1.25rem}
+.info b{display:block;margin:.7rem 0 .2rem;font-family:var(--head);font-size:1.15rem}
+.info span{color:var(--muted);font-size:.92rem}
+.safety{margin-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.safe{display:flex;gap:14px;padding:18px 20px;border-radius:16px;background:var(--grass-soft)}
+.safe i{color:var(--ember);font-size:1.1rem;margin-top:4px}
+.safe b{display:block;font-size:.98rem}
+.safe span{font-size:.9rem;color:var(--muted)}
+
+/* ===== Reviews ===== */
+.reviews{background:var(--sage-soft)}
+.score{display:flex;align-items:center;gap:18px}
+.score b{font-family:var(--head);font-size:3.6rem;font-weight:800;line-height:1;color:var(--ember)}
+.score span{color:var(--muted);font-size:.95rem;line-height:1.4}
+.r-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 20px;scrollbar-width:none}
+.r-track::-webkit-scrollbar{display:none}
+.review{flex:0 0 min(360px,85%);scroll-snap-align:start;background:var(--paper);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:16px;transition:transform .35s var(--ease),box-shadow .35s}
+.review:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.review .stars{color:var(--grass);font-size:.85rem;letter-spacing:2px}
+.review q{font-size:1.05rem;quotes:none;flex:1}
+.review footer{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:14px}
+.av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;background:var(--river);font-family:var(--head)}
+.review footer b{display:block;font-size:.95rem}
+.review footer span{font-size:.82rem;color:var(--muted)}
+.r-nav{display:flex;gap:10px}
+.r-nav button{width:50px;height:50px;border-radius:50%;border:1.5px solid var(--dusk);background:transparent;cursor:pointer;transition:background .25s,color .25s}
+.r-nav button:hover{background:var(--dusk);color:#fff}
+
+/* ===== Host ===== */
+.host-box{display:grid;grid-template-columns:auto 1fr auto;gap:40px;align-items:center;background:var(--paper);border-radius:28px;padding:44px;border:1px solid var(--line)}
+.host-pic{position:relative;width:150px;height:150px}
+.host-pic img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:5px solid var(--grass-soft)}
+.host-pic .star{position:absolute;right:2px;bottom:6px;width:44px;height:44px;border-radius:50%;background:var(--ember);color:#fff;display:grid;place-items:center;border:4px solid #fff}
+.host-box h2{font-size:clamp(1.8rem,3vw,2.5rem);margin:.4rem 0 .6rem}
+.host-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.host-tags span{display:inline-flex;align-items:center;gap:.45rem;padding:.45rem .85rem;border-radius:999px;background:var(--cream);font-size:.88rem;font-weight:600}
+.host-tags i{color:var(--ember)}
+.host-actions{display:grid;gap:10px}
+
+/* ===== Booking ===== */
+.book{background:linear-gradient(180deg,var(--cream) 0%,var(--grass-soft) 100%)}
+.book-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:30px;align-items:start}
+.book-form{background:var(--paper);border-radius:28px;padding:40px;box-shadow:var(--shadow)}
+.step-title{display:flex;align-items:center;gap:12px;font-family:var(--head);font-weight:700;font-size:1.2rem;margin:8px 0 18px}
+.step-title span{width:32px;height:32px;border-radius:50%;background:var(--dusk);color:#fff;display:grid;place-items:center;font-size:.9rem}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stepper{display:flex;align-items:center;justify-content:space-between;border:1.5px solid var(--line);border-radius:12px;padding:6px 6px 6px 16px;background:var(--cream)}
+.stepper output{font-weight:700}
+.stepper div{display:flex;gap:6px}
+.stepper button{width:38px;height:38px;border-radius:10px;border:0;background:#fff;cursor:pointer;transition:background .25s,color .25s}
+.stepper button:hover:not(:disabled){background:var(--ember);color:#fff}
+.stepper button:disabled{opacity:.35;cursor:not-allowed}
+.toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;background:var(--cream);cursor:pointer;margin-bottom:14px}
+.toggle input{appearance:none;width:48px;height:28px;border-radius:999px;background:#cfc9bb;position:relative;cursor:pointer;transition:background .25s;flex-shrink:0}
+.toggle input::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:transform .25s var(--ease)}
+.toggle input:checked{background:var(--ok)}
+.toggle input:checked::after{transform:translateX(20px)}
+.err{color:var(--bad);font-size:.85rem;font-weight:600;min-height:1.1em}
+.divider{height:1px;background:var(--line);margin:22px 0}
+.book-form .btn{width:100%;padding:1.1rem;font-size:1.05rem;margin-top:8px}
+.secure{text-align:center;font-size:.85rem;color:var(--muted);margin-top:12px}
+.summary{position:sticky;top:100px;background:var(--dusk);color:#fff;border-radius:28px;overflow:hidden}
+.summary-img{height:190px;position:relative}
+.summary-img img{width:100%;height:100%;object-fit:cover}
+.summary-img span{position:absolute;left:16px;bottom:14px;padding:.4rem .8rem;border-radius:999px;background:rgba(28,38,41,.7);font-size:.85rem;font-weight:600}
+.summary-body{padding:28px}
+.summary h3{font-size:1.5rem}
+.summary .sub{color:rgba(255,255,255,.7);font-size:.92rem;margin-bottom:20px}
+.line{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed rgba(255,255,255,.15);font-size:.96rem}
+.line span:first-child{color:rgba(255,255,255,.75)}
+.total{display:flex;justify-content:space-between;align-items:baseline;padding-top:16px}
+.total b{font-family:var(--head);font-size:2.2rem;font-weight:800;color:var(--grass)}
+.summary small{display:block;color:rgba(255,255,255,.6);margin-top:10px;font-size:.82rem}
+.success{display:none;text-align:center;padding:30px 10px}
+.success.show{display:block;animation:pop .5s var(--ease)}
+.success .tick{width:84px;height:84px;margin:0 auto 20px;border-radius:50%;background:#e3f0e4;color:var(--ok);display:grid;place-items:center;font-size:2rem}
+.success h3{font-size:2rem;margin-bottom:.6rem}
+.success p{color:var(--muted);max-width:42ch;margin:0 auto 1.4rem}
+
+/* ===== Footer ===== */
+.footer{background:var(--dusk);color:rgba(255,255,255,.75);padding:80px 0 30px}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px}
+.footer .logo{color:#fff;margin-bottom:16px}
+.footer h4{color:#fff;font-family:var(--head);font-size:1.05rem;margin-bottom:16px}
+.footer ul{list-style:none;display:grid;gap:10px}
+.footer a{text-decoration:none;transition:color .25s}
+.footer a:hover{color:var(--grass)}
+.footer li i{width:20px;color:var(--grass);margin-right:.4rem}
+.socials{display:flex;gap:10px;margin-top:18px}
+.socials a{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.08);transition:background .25s,transform .25s}
+.socials a:hover{background:var(--ember);color:#fff;transform:translateY(-3px)}
+.f-bottom{margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);text-align:center;font-size:.9rem}
+
+/* mobile book bar */
+.mbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none;align-items:center;justify-content:space-between;gap:12px;padding:10px 10px 10px 20px;border-radius:18px;background:var(--dusk);color:#fff;box-shadow:var(--shadow);transform:translateY(130%);transition:transform .4s var(--ease)}
+.mbar.show{transform:none}
+.mbar b{font-family:var(--head);font-size:1.3rem}
+.mbar span{font-size:.85rem;opacity:.75}
+.mbar .btn{padding:.8rem 1.2rem}
+
+/* ===== Responsive ===== */
+@media (max-width:1024px){
+  .stat-grid{grid-template-columns:repeat(3,1fr)}
+  .stat:nth-child(3){border-right:0}
+  .stat:nth-child(n+4){border-top:1px solid var(--line)}
+  .site-grid,.book-grid{grid-template-columns:1fr;gap:40px}
+  .rig,.summary{position:static}
+  .info-row{grid-template-columns:1fr 1fr}
+  .safety{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .host-box{grid-template-columns:auto 1fr}
+  .host-actions{grid-column:1/-1;grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .menu{position:fixed;inset:0 0 0 auto;width:min(320px,85vw);flex-direction:column;align-items:stretch;justify-content:center;gap:6px;padding:30px;background:var(--dusk);transform:translateX(100%);transition:transform .4s var(--ease)}
+  .menu.open{transform:none;box-shadow:-20px 0 60px rgba(0,0,0,.4)}
+  .menu a,.header.solid .menu a{color:#fff;font-size:1.15rem;padding:.9rem 1rem}
+  .header.solid .menu a:hover{background:rgba(255,255,255,.1)}
+  .menu .btn{margin:14px 0 0}
+  .burger{display:grid;place-items:center;position:relative;z-index:2}
+  .altitude{display:none}
+  .hero-inner{grid-template-columns:1fr}
+  .quick form{grid-template-columns:1fr 1fr}
+  .quick .btn{grid-column:1/-1}
+  .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:170px}
+  .g-item.big{grid-column:span 2}
+  .g-item.wide{grid-column:span 2}
+  .g-item figcaption{opacity:1;transform:none}
+  .expect-grid{grid-template-columns:1fr}
+  .mbar{display:flex}
+  section{padding:80px 0}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .stat{border-right:1px solid var(--line)!important;border-top:1px solid var(--line)}
+  .stat:nth-child(2n){border-right:0!important}
+  .stat:nth-child(-n+2){border-top:0}
+  .stat:last-child{grid-column:1/-1;border-right:0!important}
+  .quick form{grid-template-columns:1fr}
+  .amen{grid-template-columns:1fr}
+  .info-row,.row,.f-grid{grid-template-columns:1fr}
+  .host-box{grid-template-columns:1fr;text-align:left;padding:30px}
+  .host-actions{grid-template-columns:1fr}
+  .book-form,.card,.rig{padding:24px}
+  .lightbox{padding:60px 10px}
+  .lb-prev,.lb-next{top:auto;bottom:14px;margin:0}
+  .lb-cap{bottom:80px}
+  .footer{padding-bottom:110px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+  .alt-bar span{height:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header class="header" id="header">
+  <nav class="wrap nav" aria-label="Main">
+    <a href="#top" class="logo"><i class="fa-solid fa-mountain-sun"></i>Paradise View</a>
+    <ul class="menu" id="menu">
+      <li><a href="#photos">Photos</a></li>
+      <li><a href="#site">The Site</a></li>
+      <li><a href="#expect">Good to Know</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#host">Host</a></li>
+      <li><a href="#book" class="btn btn-ember"><i class="fa-regular fa-calendar-check"></i>Book Now</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i class="fa-solid fa-bars"></i></button>
+  </nav>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="top">
+  <div class="hero-bg" style="background-image:url('https://dxynby2r8cy0b.cloudfront.net/f_auto,c_limit,w_1920,q_auto/v1790199239/campground-photos/yaxenmk9p3bfd5cwwd5f.jpg')"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow"><i class="fa-solid fa-location-dot"></i>Badger Mountain · East Wenatchee, WA</span>
+      <h1>Paradise View Retreat</h1>
+      <p>62 private acres on the highest point of Badger Mountain. One campsite, nobody else, and the whole Columbia River valley below you.</p>
+      <div class="badges">
+        <span class="badge"><i class="fa-solid fa-star"></i>99% recommend · 28 reviews</span>
+        <span class="badge"><i class="fa-solid fa-award"></i>Star Host</span>
+        <span class="badge"><i class="fa-solid fa-paw"></i>Pet friendly</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#book" class="btn btn-ember"><i class="fa-regular fa-calendar-check"></i>Book your stay</a>
+        <a href="#photos" class="btn btn-ghost"><i class="fa-regular fa-images"></i>See the views</a>
+      </div>
+    </div>
+    <div class="altitude" aria-hidden="true">
+      <div class="alt-num">3,100</div>
+      <div class="alt-bar"><span></span></div>
+      <div class="alt-label">feet above sea level</div>
+    </div>
+  </div>
+</section>
+
+<!-- Quick availability bar -->
+<div class="wrap quick">
+  <form id="quickForm" class="reveal" aria-label="Check availability">
+    <div class="q-field">
+      <i class="fa-regular fa-calendar"></i>
+      <div style="flex:1"><label for="qIn">Check in</label><input type="date" id="qIn" required></div>
+    </div>
+    <div class="q-field">
+      <i class="fa-regular fa-calendar-check"></i>
+      <div style="flex:1"><label for="qOut">Check out</label><input type="date" id="qOut" required></div>
+    </div>
+    <div class="q-field">
+      <i class="fa-solid fa-user-group"></i>
+      <div style="flex:1"><label for="qGuests">Guests</label>
+        <select id="qGuests"></select>
+      </div>
+    </div>
+    <button class="btn btn-ember" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Check dates</button>
+  </form>
+  <div class="quick-note">
+    <span><i class="fa-solid fa-tag"></i>From <strong>$70</strong> / night</span>
+    <span><i class="fa-regular fa-clock"></i>Check in after <strong>1 PM</strong></span>
+    <span><i class="fa-solid fa-moon"></i>1 night minimum</span>
+    <span><i class="fa-solid fa-signal"></i>Strong Verizon 5G</span>
+  </div>
+</div>
+
+<!-- ===== Stats ===== -->
+<div class="stats">
+  <div class="wrap stat-grid reveal">
+    <div class="stat"><i class="fa-solid fa-tree"></i><b data-count="62">0</b><span>private acres</span></div>
+    <div class="stat"><i class="fa-solid fa-mountain"></i><b data-count="3100" data-sep>0</b><span>feet elevation</span></div>
+    <div class="stat"><i class="fa-solid fa-person-hiking"></i><b data-count="900" data-suffix="+">0</b><span>acres public land next door</span></div>
+    <div class="stat"><i class="fa-solid fa-compass"></i><b data-count="360" data-suffix="°">0</b><span>unobstructed views</span></div>
+    <div class="stat"><i class="fa-solid fa-campground"></i><b data-count="1">0</b><span>site, all to yourself</span></div>
+  </div>
+</div>
+
+<!-- ===== Gallery ===== -->
+<section id="photos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow"><i class="fa-regular fa-images"></i>The Views</span>
+        <h2>Pictures don't do it justice.<br>But here's a start.</h2>
+      </div>
+      <p class="lead">Mellow sunrises, fiery sunsets and the river winding through the valley. Tap any photo to see it full screen.</p>
+    </div>
+    <div class="gallery reveal" id="gallery"></div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous photo"><i class="fa-solid fa-chevron-left"></i></button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next photo"><i class="fa-solid fa-chevron-right"></i></button>
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
+<!-- ===== The Site ===== -->
+<section class="site" id="site">
+  <div class="wrap site-grid">
+    <div class="reveal">
+      <span class="eyebrow"><i class="fa-solid fa-campground"></i>Upper Camping Pad</span>
+      <h2>Your own mountaintop.<br>No neighbours for miles.</h2>
+      <p class="lead">The pad sits right at the peak of the mountain. Pitch a tent or park your RV, then walk the 62 private acres or head straight into 900+ acres of public land that connects through the property. Watch deer at dawn, and stars at night.</p>
+      <ul class="points">
+        <li><i class="fa-solid fa-user-lock"></i><div><b>Completely private</b><span>One site on the whole property. No other campers on your 62 acres.</span></div></li>
+        <li><i class="fa-solid fa-people-group"></i><div><b>Up to 10 guests · 2 vehicles</b><span>Bring the whole crew. Picnic table and 6 chairs are set up for you.</span></div></li>
+        <li><i class="fa-solid fa-fire"></i><div><b>Private fire pit</b><span>Bring your own firewood. Fires are off during Douglas County burn bans.</span></div></li>
+        <li><i class="fa-solid fa-dog"></i><div><b>Dogs welcome</b><span>On or off leash. Lots of guests bring their pups.</span></div></li>
+        <li><i class="fa-solid fa-truck-monster"></i><div><b>4WD recommended</b><span>Dirt road to the top. Your host sends clear directions and road videos after booking.</span></div></li>
+      </ul>
+      <p style="font-weight:700;margin-bottom:12px">A short drive away</p>
+      <div class="nearby">
+        <span><i class="fa-solid fa-wine-glass"></i>Award winning wineries</span>
+        <span><i class="fa-solid fa-person-swimming"></i>Lake Chelan</span>
+        <span><i class="fa-solid fa-golf-ball-tee"></i>Golf</span>
+        <span><i class="fa-solid fa-water"></i>Columbia River Valley</span>
+      </div>
+    </div>
+
+    <aside class="rig reveal" aria-labelledby="rigTitle">
+      <div class="rig-img"><img loading="lazy" src="https://dxynby2r8cy0b.cloudfront.net/images/f_auto,c_limit,w_900,q_auto/v1749484891/campground-photos/s8jyry7024qemdtxejlz/paradise-view-retreat-2-paradise-view-upper-camping-pad-lake-wenatchee.jpg" alt="The upper camping pad on Badger Mountain"></div>
+      <h3 id="rigTitle"><i class="fa-solid fa-caravan" style="color:var(--ember)"></i> Will my rig fit?</h3>
+      <p>The pad is about 70 × 80 ft at the peak with no extra turnaround space. Check before you book.</p>
+      <div class="field">
+        <label for="rigType">How are you camping?</label>
+        <select id="rigType">
+          <option value="tent">Tent</option>
+          <option value="car">Car camping</option>
+          <option value="rooftop">Rooftop tent</option>
+          <option value="van">Campervan</option>
+          <option value="classb">Class B RV</option>
+          <option value="classc">Class C RV</option>
+          <option value="classa">Class A RV</option>
+          <option value="truck">Truck camper</option>
+          <option value="popup">Pop up camper</option>
+          <option value="trailer">Travel trailer</option>
+          <option value="fifth">Fifth wheel</option>
+          <option value="toy">Toy hauler</option>
+        </select>
+      </div>
+      <div class="field" id="lenField" hidden>
+        <label for="rigLen">Vehicle length (ft)</label>
+        <input type="number" id="rigLen" min="5" max="60" value="20" inputmode="numeric">
+      </div>
+      <div class="rig-result ok" id="rigResult" role="status" aria-live="polite"><i class="fa-solid fa-circle-check"></i><span>Perfect. Tents are a great fit on the pad.</span></div>
+      <div class="rig-specs">
+        <span>Under 24 ft</span><span>Pull in</span><span>Slideouts OK</span><span>Flat grass</span><span>Generators OK</span><span>No hookups</span>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ===== What to expect ===== -->
+<section id="expect">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow"><i class="fa-solid fa-circle-info"></i>Good to Know</span>
+        <h2>Simple, wild,<br>and self contained.</h2>
+      </div>
+      <p class="lead">This is a primitive site, best for campers who bring their own setup. Here's exactly what's waiting for you and what to pack.</p>
+    </div>
+
+    <div class="expect-grid">
+      <div class="card reveal">
+        <h3><span class="ic green"><i class="fa-solid fa-check"></i></span>Waiting for you</h3>
+        <div class="amen">
+          <div><i class="fa-solid fa-chair"></i>Picnic table for 6</div>
+          <div><i class="fa-solid fa-couch"></i>6 camp chairs</div>
+          <div><i class="fa-solid fa-fire-flame-curved"></i>Private fire pit</div>
+          <div><i class="fa-solid fa-signal"></i>Verizon 5G signal</div>
+          <div><i class="fa-solid fa-plug-circle-bolt"></i>Generators allowed</div>
+          <div><i class="fa-solid fa-square-parking"></i>Park at the site</div>
+        </div>
+      </div>
+      <div class="card bring reveal">
+        <h3><span class="ic amber"><i class="fa-solid fa-suitcase"></i></span>Bring with you</h3>
+        <div class="amen">
+          <div><i class="fa-solid fa-bottle-water"></i>Drinking water</div>
+          <div><i class="fa-solid fa-toilet-portable"></i>Camp toilet</div>
+          <div><i class="fa-solid fa-tree"></i>Your own firewood</div>
+          <div><i class="fa-solid fa-utensils"></i>Cooking gear</div>
+          <div><i class="fa-solid fa-trash-can"></i>Bags to pack it out</div>
+          <div><i class="fa-solid fa-wind"></i>Layers for the wind</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-row">
+      <div class="info reveal"><i class="fa-solid fa-right-to-bracket"></i><b>Check in after 1 PM</b><span>Head straight to your site</span></div>
+      <div class="info reveal"><i class="fa-solid fa-right-from-bracket"></i><b>Check out by 12 PM</b><span>Leave it better than you found it</span></div>
+      <div class="info reveal"><i class="fa-solid fa-calendar-days"></i><b>Book 12 months out</b><span>1 night minimum stay</span></div>
+      <div class="info reveal"><i class="fa-solid fa-file-shield"></i><b>Strict cancellation</b><span>Plan your dates with care</span></div>
+    </div>
+
+    <div class="safety">
+      <div class="safe reveal"><i class="fa-solid fa-cloud-showers-heavy"></i><div><b>Check the forecast</b><span>The ridge gets gusty and the dirt road is tricky after rain. Dry days are easiest.</span></div></div>
+      <div class="safe reveal"><i class="fa-solid fa-paw"></i><div><b>Wildlife around</b><span>Deer are common. Cougars, coyotes and rattlesnakes may be active at dusk and night.</span></div></div>
+      <div class="safe reveal"><i class="fa-solid fa-video"></i><div><b>Security cameras</b><span>The property is monitored by security cameras.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Reviews ===== -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow"><i class="fa-solid fa-comment-dots"></i>Guest Stories</span>
+        <h2>"Better than pictured."</h2>
+      </div>
+      <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap">
+        <div class="score"><b>99%</b><span>of guests recommend<br>34 ratings · 28 reviews</span></div>
+        <div class="r-nav">
+          <button id="rPrev" aria-label="Previous reviews"><i class="fa-solid fa-arrow-left"></i></button>
+          <button id="rNext" aria-label="Next reviews"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="r-track reveal" id="rTrack"></div>
+  </div>
+</section>
+
+<!-- ===== Host ===== -->
+<section id="host" style="padding-bottom:40px">
+  <div class="wrap">
+    <div class="host-box reveal">
+      <div class="host-pic">
+        <img src="https://hipcamp-res.cloudinary.com/image/upload/c_fill,f_auto,h_300,w_300/v1735624515/profile/j1ypn59rafl3kcaarjvt.jpg" alt="Liliya, your host" loading="lazy">
+        <span class="star" title="Star Host"><i class="fa-solid fa-star"></i></span>
+      </div>
+      <div>
+        <span class="eyebrow"><i class="fa-solid fa-hand-holding-heart"></i>Meet your host</span>
+        <h2>Hi, I'm Liliya.</h2>
+        <p class="lead">Guests mention it again and again: quick replies, clear directions, and even videos of each stretch of road so you know exactly what to expect on the way up. I want your stay on the mountain to be easy from the first message.</p>
+        <div class="host-tags">
+          <span><i class="fa-solid fa-award"></i>Star Host</span>
+          <span><i class="fa-solid fa-bolt"></i>Very responsive</span>
+          <span><i class="fa-regular fa-calendar"></i>Hosting since Dec 2024</span>
+        </div>
+      </div>
+      <div class="host-actions">
+        <a href="#book" class="btn btn-ember"><i class="fa-regular fa-paper-plane"></i>Request to book</a>
+        <a href="https://www.instagram.com/paradiseviewretreat2025" target="_blank" rel="noopener" class="btn btn-dark"><i class="fa-brands fa-instagram"></i>Follow along</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Booking ===== -->
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow"><i class="fa-regular fa-calendar-check"></i>Reserve</span>
+        <h2>Claim the mountain<br>for your dates.</h2>
+      </div>
+      <p class="lead">Send a request in under a minute. Liliya confirms availability and sends directions to the top.</p>
+    </div>
+
+    <div class="book-grid">
+      <form class="book-form reveal" id="bookForm" novalidate>
+        <div id="formBody">
+          <div class="step-title"><span>1</span>Your dates</div>
+          <div class="row">
+            <div class="field"><label for="bIn">Check in</label><input type="date" id="bIn" required></div>
+            <div class="field"><label for="bOut">Check out</label><input type="date" id="bOut" required></div>
+          </div>
+          <div class="err" id="dateErr"></div>
+
+          <div class="divider"></div>
+          <div class="step-title"><span>2</span>Your group</div>
+          <div class="row">
+            <div class="field"><label id="gLbl">Guests <small style="color:var(--muted)">(max 10)</small></label>
+              <div class="stepper" aria-labelledby="gLbl"><output id="gOut">2</output><div><button type="button" data-step="g" data-d="-1" aria-label="Fewer guests"><i class="fa-solid fa-minus"></i></button><button type="button" data-step="g" data-d="1" aria-label="More guests"><i class="fa-solid fa-plus"></i></button></div></div>
+            </div>
+            <div class="field"><label id="vLbl">Vehicles <small style="color:var(--muted)">(max 2)</small></label>
+              <div class="stepper" aria-labelledby="vLbl"><output id="vOut">1</output><div><button type="button" data-step="v" data-d="-1" aria-label="Fewer vehicles"><i class="fa-solid fa-minus"></i></button><button type="button" data-step="v" data-d="1" aria-label="More vehicles"><i class="fa-solid fa-plus"></i></button></div></div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="bRig">How are you camping?</label>
+            <select id="bRig">
+              <option>Tent</option><option>Car camping</option><option>Rooftop tent</option><option>Campervan</option>
+              <option>Class B RV (under 24 ft)</option><option>Class C RV (under 24 ft)</option><option>Class A RV (under 24 ft)</option>
+              <option>Truck camper</option><option>Pop up camper</option>
+            </select>
+          </div>
+          <label class="toggle" for="bPets"><span><i class="fa-solid fa-dog" style="color:var(--ember);margin-right:.5rem"></i>Bringing a dog?</span><input type="checkbox" id="bPets"></label>
+
+          <div class="divider"></div>
+          <div class="step-title"><span>3</span>Your details</div>
+          <div class="row">
+            <div class="field"><label for="bName">Full name</label><input type="text" id="bName" autocomplete="name" required placeholder="Jane Doe"></div>
+            <div class="field"><label for="bEmail">Email</label><input type="email" id="bEmail" autocomplete="email" required placeholder="jane@email.com"></div>
+          </div>
+          <div class="field"><label for="bPhone">Phone <small style="color:var(--muted)">(optional)</small></label><input type="tel" id="bPhone" autocomplete="tel" placeholder="(555) 123 4567"></div>
+          <div class="field"><label for="bMsg">Message for Liliya <small style="color:var(--muted)">(optional)</small></label><textarea id="bMsg" rows="3" placeholder="Tell us about your trip, your vehicle, or any questions"></textarea></div>
+          <div class="err" id="formErr"></div>
+          <button class="btn btn-ember" type="submit"><i class="fa-regular fa-paper-plane"></i>Send booking request</button>
+          <p class="secure"><i class="fa-solid fa-lock"></i> No payment now. You'll only pay once your dates are confirmed.</p>
+        </div>
+
+        <div class="success" id="success" role="status" aria-live="polite">
+          <div class="tick"><i class="fa-solid fa-check"></i></div>
+          <h3>Request sent!</h3>
+          <p id="successMsg">Liliya will reply shortly to confirm your dates and send directions to the top.</p>
+          <button type="button" class="btn btn-dark" id="newReq"><i class="fa-solid fa-rotate-left"></i>Make another request</button>
+        </div>
+      </form>
+
+      <aside class="summary reveal" aria-label="Booking summary">
+        <div class="summary-img">
+          <img loading="lazy" src="https://dxynby2r8cy0b.cloudfront.net/f_auto,c_limit,w_900,q_auto/v1790199240/campground-photos/v9jdp7bkvz1dkancq35o.jpg" alt="Sunrise from the campsite">
+          <span><i class="fa-solid fa-star" style="color:var(--grass)"></i> 99% recommend</span>
+        </div>
+        <div class="summary-body">
+          <h3>Paradise View Retreat</h3>
+          <p class="sub">Upper Camping Pad · East Wenatchee, WA</p>
+          <div class="line"><span>Dates</span><span id="sDates">Select dates</span></div>
+          <div class="line"><span id="sCalc">$70 × 0 nights</span><span id="sSub">$0</span></div>
+          <div class="line"><span>Guests</span><span id="sGuests">2 guests · 1 vehicle</span></div>
+          <div class="total"><span>Estimated total</span><b id="sTotal">$0</b></div>
+          <small>Taxes and any fees are confirmed by the host before payment.</small>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="wrap f-grid">
+    <div>
+      <a href="#top" class="logo"><i class="fa-solid fa-mountain-sun"></i>Paradise View</a>
+      <p>A private mountaintop campsite at 3,100 ft on Badger Mountain, overlooking the Columbia River in East Wenatchee, Washington.</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/paradiseviewretreat2025" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#book" aria-label="Book now"><i class="fa-regular fa-calendar-check"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#photos">Photos</a></li>
+        <li><a href="#site">The Site</a></li>
+        <li><a href="#expect">Good to Know</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Your Stay</h4>
+      <ul>
+        <li><a href="#book">Book Now</a></li>
+        <li><a href="#site">Rig Checker</a></li>
+        <li><a href="#host">Meet the Host</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><i class="fa-solid fa-location-dot"></i>Badger Mountain, East Wenatchee, WA</li>
+        <li><i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/paradiseviewretreat2025" target="_blank" rel="noopener">@paradiseviewretreat2025</a></li>
+        <li><i class="fa-solid fa-user"></i>Hosted by Liliya Y.</li>
+        <li><i class="fa-solid fa-key"></i>Exact address shared after booking</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap f-bottom">© <span id="year">2026</span> Paradise View Retreat. All rights reserved.</div>
+</footer>
+
+<!-- Mobile sticky booking bar -->
+<div class="mbar" id="mbar">
+  <div><b>$70</b> <span>/ night</span><br><span><i class="fa-solid fa-star" style="color:var(--grass)"></i> 99% recommend</span></div>
+  <a href="#book" class="btn btn-ember">Book Now</a>
+</div>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  const PRICE = 70;
+
+  /* ---------- Photos ---------- */
+  const CF = 'https://dxynby2r8cy0b.cloudfront.net/';
+  const photos = [
+    {u:CF+'f_auto,c_limit,w_{w},q_auto/v1790199239/campground-photos/yaxenmk9p3bfd5cwwd5f.jpg', c:'Views right from your tent', cls:'big'},
+    {u:CF+'f_auto,c_limit,w_{w},q_auto/v1790199240/campground-photos/v9jdp7bkvz1dkancq35o.jpg', c:'An amazing spot for sunrise', cls:'tall'},
+    {u:CF+'f_auto,c_limit,w_{w},q_auto/v1790199240/campground-photos/kwv3tuezi04hkvo16owo.jpg', c:'Fire ring, table and chairs', cls:''},
+    {u:CF+'f_auto,c_limit,w_{w},q_auto/v1790199241/campground-photos/ijacpa6qjjkfjgzenncv.jpg', c:'The Columbia River below', cls:''},
+    {u:CF+'images/f_auto,c_limit,w_{w},q_auto/v1749484891/campground-photos/s8jyry7024qemdtxejlz/paradise-view-retreat-2-paradise-view-upper-camping-pad-lake-wenatchee.jpg', c:'The upper camping pad', cls:'wide'},
+    {u:CF+'f_auto,c_limit,w_{w},q_auto/v1790199241/campground-photos/hr4cuhksfwf47m03ho1i.jpg', c:'62 acres to explore', cls:''},
+    {u:CF+'f_auto,c_limit,w_{w},q_auto/v1790199246/campground-photos/rdtw6gz76nxst4jlzdgi.jpg', c:'Life on the ridge', cls:''},
+    {u:CF+'images/f_auto,c_limit,w_{w},q_auto/v1735629406/dev-campground-photos/kzrsgdwanvvagfj7ocvb/paradise-view-retreat-2-paradise-view-upper-camping-pad-lake-wenatchee.jpg', c:'Room to spread out', cls:'wide'},
+    {u:CF+'images/f_auto,c_limit,w_{w},q_auto/v1735629446/dev-campground-photos/ztyp82rrtdokg5gbl174/paradise-view-retreat-2-paradise-view-upper-camping-pad-lake-wenatchee.jpg', c:'Valley views all day', cls:''},
+    {u:CF+'image/upload/c_limit,f_auto,h_1200,q_60,w_{w}/v1735629704/dev-campground-photos/uifihfgdfucllusspd59.jpg', c:'Sunset over the valley', cls:''}
+  ];
+  const src = (p,w) => p.u.replace('{w}', w);
+  const gal = $('#gallery');
+  const SHOW = 9;
+  photos.slice(0, SHOW).forEach((p, i) => {
+    const b = document.createElement('button');
+    b.className = 'g-item ' + p.cls;
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Open photo: ' + p.c);
+    const last = i === SHOW - 1 && photos.length > SHOW;
+    b.innerHTML = `<img loading="lazy" src="${src(p, p.cls === 'big' ? 1200 : 800)}" alt="${p.c}">` +
+      (last ? `<span class="g-more">+${photos.length - SHOW + 1} photos</span>` : `<figcaption>${p.c}<i class="fa-solid fa-expand"></i></figcaption>`);
+    b.addEventListener('click', () => openLb(i));
+    gal.appendChild(b);
+  });
+
+  /* ---------- Lightbox ---------- */
+  const lb = $('#lightbox'), lbImg = $('#lbImg'), lbCap = $('#lbCap');
+  let cur = 0, lastFocus = null;
+  function showLb(){
+    const p = photos[cur];
+    lbImg.style.animation = 'none'; lbImg.offsetHeight; lbImg.style.animation = '';
+    lbImg.src = src(p, 1920); lbImg.alt = p.c;
+    lbCap.innerHTML = `${p.c}<span>${cur + 1} / ${photos.length}</span>`;
+  }
+  function openLb(i){ cur = i; lastFocus = document.activeElement; showLb(); lb.classList.add('open'); document.body.style.overflow = 'hidden'; $('#lbClose').focus(); }
+  function closeLb(){ lb.classList.remove('open'); document.body.style.overflow = ''; lastFocus && lastFocus.focus(); }
+  const step = d => { cur = (cur + d + photos.length) % photos.length; showLb(); };
+  $('#lbClose').onclick = closeLb;
+  $('#lbPrev').onclick = () => step(-1);
+  $('#lbNext').onclick = () => step(1);
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') step(-1);
+    if (e.key === 'ArrowRight') step(1);
+  });
+  let tx = 0;
+  lb.addEventListener('touchstart', e => tx = e.touches[0].clientX, {passive:true});
+  lb.addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1); });
+
+  /* ---------- Header / menu ---------- */
+  const header = $('#header'), menu = $('#menu'), burger = $('#burger'), mbar = $('#mbar');
+  const onScroll = () => {
+    header.classList.toggle('solid', scrollY > 60);
+    const bookTop = $('#book').getBoundingClientRect().top;
+    mbar.classList.toggle('show', scrollY > innerHeight * .8 && bookTop > innerHeight * .5);
+  };
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  burger.onclick = () => {
+    const open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+    burger.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+  };
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { if (menu.classList.contains('open')) burger.click(); }));
+
+  /* ---------- Reveal + counters ---------- */
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in');
+    e.target.querySelectorAll('[data-count]').forEach(countUp);
+    io.unobserve(e.target);
+  }), {threshold:.15});
+  document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 4) * 70 + 'ms'; io.observe(el); });
+  function countUp(el){
+    const end = +el.dataset.count, suf = el.dataset.suffix || '', sep = 'sep' in el.dataset;
+    const fmt = n => (sep ? n.toLocaleString('en-US') : n) + suf;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = fmt(end); return; }
+    const t0 = performance.now(), dur = 1600;
+    const tick = t => { const k = Math.min((t - t0) / dur, 1); el.textContent = fmt(Math.round(end * (1 - Math.pow(1 - k, 3)))); if (k < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  }
+
+  /* ---------- Rig checker ---------- */
+  const rigType = $('#rigType'), rigLen = $('#rigLen'), lenField = $('#lenField'), res = $('#rigResult');
+  const noLen = ['tent','car','rooftop'], banned = ['trailer','fifth','toy'];
+  function setRes(kind, icon, msg){ res.className = 'rig-result ' + kind; res.innerHTML = `<i class="fa-solid ${icon}"></i><span>${msg}</span>`; }
+  function checkRig(){
+    const t = rigType.value, len = parseFloat(rigLen.value);
+    lenField.hidden = noLen.includes(t) || banned.includes(t);
+    if (banned.includes(t)) return setRes('bad','fa-circle-xmark','Sorry, travel trailers, fifth wheels and toy haulers are not allowed. There is no room to turn around at the top.');
+    if (noLen.includes(t)) return setRes('ok','fa-circle-check', t === 'tent' ? 'Perfect. Tents are a great fit on the pad.' : 'Great fit. Park right at your site. A high clearance or 4WD vehicle is best for the road.');
+    if (!len || len <= 0) return setRes('warn','fa-circle-info','Enter your vehicle length to check.');
+    if (len >= 24) return setRes('bad','fa-circle-xmark',`At ${len} ft your rig is too long. Vehicles must be under 24 ft.`);
+    if (t === 'popup') return setRes('warn','fa-triangle-exclamation',`${len} ft fits the size limit. Towing up the dirt road is challenging, so a 4WD truck and dry weather are a must.`);
+    if (len >= 21) return setRes('warn','fa-triangle-exclamation',`${len} ft fits, but it's snug at the top. 4WD recommended and avoid driving up after rain.`);
+    setRes('ok','fa-circle-check',`Your ${len} ft rig fits. Pull in site, slideouts are fine. 4WD recommended.`);
+  }
+  rigType.addEventListener('change', checkRig); rigLen.addEventListener('input', checkRig); checkRig();
+
+  /* ---------- Dates helpers ---------- */
+  const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 6e4).toISOString().slice(0,10);
+  const today = new Date(); today.setHours(0,0,0,0);
+  const maxD = new Date(today); maxD.setMonth(maxD.getMonth() + 12);
+  ['#qIn','#qOut','#bIn','#bOut'].forEach(s => { $(s).min = iso(today); $(s).max = iso(maxD); });
+  function linkDates(inEl, outEl){
+    inEl.addEventListener('change', () => {
+      if (!inEl.value) return;
+      const next = new Date(inEl.value + 'T00:00'); next.setDate(next.getDate() + 1);
+      outEl.min = iso(next);
+      if (!outEl.value || outEl.value <= inEl.value) outEl.value = iso(next);
+      outEl.dispatchEvent(new Event('change'));
+    });
+  }
+  linkDates($('#qIn'), $('#qOut')); linkDates($('#bIn'), $('#bOut'));
+
+  /* ---------- Quick form ---------- */
+  const qG = $('#qGuests');
+  for (let i = 1; i <= 10; i++) qG.add(new Option(i + (i > 1 ? ' guests' : ' guest'), i, i === 2, i === 2));
+  $('#quickForm').addEventListener('submit', e => {
+    e.preventDefault();
+    if ($('#qIn').value) $('#bIn').value = $('#qIn').value;
+    if ($('#qOut').value) $('#bOut').value = $('#qOut').value;
+    $('#bOut').min = $('#qOut').min;
+    guests = +qG.value; renderSteppers(); update();
+    $('#book').scrollIntoView({behavior:'smooth'});
+    setTimeout(() => $('#bName').focus({preventScroll:true}), 700);
+  });
+
+  /* ---------- Booking form ---------- */
+  let guests = 2, vehicles = 1;
+  function renderSteppers(){
+    $('#gOut').textContent = guests; $('#vOut').textContent = vehicles;
+    document.querySelectorAll('[data-step]').forEach(b => {
+      const v = b.dataset.step === 'g' ? guests : vehicles, max = b.dataset.step === 'g' ? 10 : 2, d = +b.dataset.d;
+      b.disabled = (d < 0 && v <= 1) || (d > 0 && v >= max);
+    });
+  }
+  document.querySelectorAll('[data-step]').forEach(b => b.addEventListener('click', () => {
+    const d = +b.dataset.d;
+    if (b.dataset.step === 'g') guests = Math.min(10, Math.max(1, guests + d));
+    else vehicles = Math.min(2, Math.max(1, vehicles + d));
+    renderSteppers(); update();
+  }));
+  const fmtD = v => new Date(v + 'T00:00').toLocaleDateString('en-US', {month:'short', day:'numeric'});
+  function nights(){
+    const a = $('#bIn').value, b = $('#bOut').value;
+    if (!a || !b) return 0;
+    return Math.max(0, Math.round((new Date(b + 'T00:00') - new Date(a + 'T00:00')) / 864e5));
+  }
+  function update(){
+    const n = nights(), a = $('#bIn').value, b = $('#bOut').value;
+    $('#sDates').textContent = a && b && n > 0 ? `${fmtD(a)} to ${fmtD(b)}` : 'Select dates';
+    $('#sCalc').textContent = `$${PRICE} × ${n} night${n === 1 ? '' : 's'}`;
+    $('#sSub').textContent = '$' + (n * PRICE);
+    $('#sTotal').textContent = '$' + (n * PRICE);
+    $('#sGuests').textContent = `${guests} guest${guests > 1 ? 's' : ''} · ${vehicles} vehicle${vehicles > 1 ? 's' : ''}`;
+    $('#dateErr').textContent = a && b && n <= 0 ? 'Check out must be after check in.' : '';
+  }
+  ['#bIn','#bOut'].forEach(s => $(s).addEventListener('change', update));
+  renderSteppers(); update();
+
+  $('#bookForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const err = $('#formErr'); err.textContent = '';
+    const name = $('#bName').value.trim(), email = $('#bEmail').value.trim();
+    if (!$('#bIn').value || !$('#bOut').value || nights() <= 0) { err.textContent = 'Please choose valid check in and check out dates.'; $('#bIn').focus(); return; }
+    if (!name) { err.textContent = 'Please add your name.'; $('#bName').focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = 'Please enter a valid email address.'; $('#bEmail').focus(); return; }
+    $('#successMsg').textContent = `Thanks ${name.split(' ')[0]}! Your request for ${$('#sDates').textContent} (${nights()} night${nights() > 1 ? 's' : ''}, ${guests} guest${guests > 1 ? 's' : ''}) is on its way. Liliya will reply to ${email} to confirm and send directions to the top.`;
+    $('#formBody').hidden = true;
+    $('#success').classList.add('show');
+    $('#book').scrollIntoView({behavior:'smooth'});
+  });
+  $('#newReq').addEventListener('click', () => {
+    $('#bookForm').reset(); guests = 2; vehicles = 1; renderSteppers(); update();
+    $('#success').classList.remove('show'); $('#formBody').hidden = false; $('#bIn').focus();
+  });
+
+  /* ---------- Reviews ---------- */
+  const reviews = [
+    {n:'Elizabeth M.', d:'September 2026', t:'Tent', q:'What a gem of a place to camp! The views are endless and the stars at night are incredible. My dog and I had a wonderful time.'},
+    {n:'Tristen H.', d:'September 2026', t:'22 ft Class A', q:'Breathtaking and private. My favorite Hipcamp so far!'},
+    {n:'Brendan G.', d:'September 2026', t:'17 ft campervan', q:'The views were incredible and it was very private. Felt like we were the only ones there for miles. Would definitely return!'},
+    {n:'Akira P.', d:'May 2026', t:'Rooftop tent', q:'Beautiful views. One of the few sites where it’s better than pictured.'},
+    {n:'Wolfgang S.', d:'August 2025', t:'16 ft campervan', q:'I had concerns about making it up in my 2WD Westfalia, but Liliya sent videos of each segment of road, which was very helpful.'},
+    {n:'Ruby P.', d:'June 2026', t:'Tent', q:'We loved tent camping on the bluff! What a private and quiet delight. River, mountains, grasses, and sun, all lovely.'},
+    {n:'Jeremy F.', d:'May 2026', t:'Rooftop tent', q:'The property felt secluded, peaceful, and safe, which made for a very relaxing experience. I would happily stay again.'},
+    {n:'Blaine D.', d:'August 2025', t:'24 ft Class B', q:'This was my second visit to this spectacular location. That says it all.'}
+  ];
+  const colors = ['#4b7a89','#d4612a','#7f8c6b','#b98a3c','#26343a'];
+  const track = $('#rTrack');
+  reviews.forEach((r, i) => {
+    const el = document.createElement('article');
+    el.className = 'review';
+    el.innerHTML = `<div class="stars" aria-label="Recommends">${'<i class="fa-solid fa-star"></i>'.repeat(5)}</div>
+      <q>${r.q}</q>
+      <footer><span class="av" style="background:${colors[i % colors.length]}">${r.n[0]}</span><div><b>${r.n}</b><span>${r.t} · ${r.d}</span></div></footer>`;
+    track.appendChild(el);
+  });
+  const scrollBy = d => track.scrollBy({left: d * (track.querySelector('.review').offsetWidth + 18), behavior:'smooth'});
+  $('#rPrev').onclick = () => scrollBy(-1);
+  $('#rNext').onclick = () => scrollBy(1);
+
+  $('#year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
